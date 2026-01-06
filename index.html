@@ -196,19 +196,36 @@
 
   <!-- NFTs -->
   <section id="nfts" class="section">
-    <div class="container grid two-col">
-      <div>
-        <h2>NFT services</h2>
-        <p>Fix metadata, royalties, marketplace sync, and cross‑chain visibility.</p>
-        <button class="btn btn-primary" id="nftHelp">Fix my NFT</button>
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 48px;">NFT Services</h2>
+      <div class="nft-grid">
+        <div class="nft-card">
+          <div class="nft-icon">🖼️</div>
+          <h3>Metadata Repair</h3>
+          <p>Fix corrupted or missing metadata, image URIs, and IPFS links across chains.</p>
+          <button class="btn btn-secondary" id="metadataHelp">Learn more</button>
+        </div>
+        <div class="nft-card">
+          <div class="nft-icon">💰</div>
+          <h3>Royalty Fixes</h3>
+          <p>Restore royalty configurations and ensure creator fees sync across marketplaces.</p>
+          <button class="btn btn-secondary" id="royaltyHelp">Learn more</button>
+        </div>
+        <div class="nft-card">
+          <div class="nft-icon">🔗</div>
+          <h3>Marketplace Sync</h3>
+          <p>Resolve visibility issues on OpenSea, Blur, Rarible, and other platforms.</p>
+          <button class="btn btn-secondary" id="marketplaceHelp">Learn more</button>
+        </div>
+        <div class="nft-card">
+          <div class="nft-icon">🌍</div>
+          <h3>Cross‑Chain Bridge</h3>
+          <p>Debug bridged NFTs, wrapped token mismatches, and chain sync failures.</p>
+          <button class="btn btn-secondary" id="bridgeHelp">Learn more</button>
+        </div>
       </div>
-      <div class="card media-card">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NFT services">
-          <rect x="40" y="30" width="120" height="80" rx="10" fill="#1e293b"/>
-          <circle cx="100" cy="70" r="26" fill="#3b82f6"/>
-          <path d="M88 72l10-12 10 12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="100" y="100" text-anchor="middle" font-size="14" fill="#93c5fd" font-family="Inter, system-ui">NFT</text>
-        </svg>
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="btn btn-primary" id="nftHelp">Fix my NFT</button>
       </div>
     </div>
   </section>

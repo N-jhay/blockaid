@@ -134,7 +134,53 @@ p { color: var(--text); line-height: 1.7; }
 .media-card { display: grid; place-items: center; }
 .passphrase-card { background: rgba(20, 24, 40, 0.8); border: 2px solid var(--primary); }
 
-/* Wallet Selector */
+/* NFT Grid */
+.nft-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 24px; 
+  margin-bottom: 24px;
+}
+.nft-card {
+  background: rgba(20, 24, 40, 0.6);
+  border: 2px solid var(--accent);
+  border-radius: 0;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(255, 0, 110, 0.1);
+}
+.nft-card:hover {
+  background: rgba(20, 24, 40, 0.8);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+  transform: translateY(-4px);
+}
+.nft-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+.nft-card h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+.nft-card p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+.nft-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 10px 16px;
+  font-size: 12px;
+}
 .wallet-selector { padding: 24px; background: rgba(20, 24, 40, 0.6); border: 1px solid var(--primary); border-radius: 0; }
 .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; }
 .wallet-btn {
@@ -243,6 +289,11 @@ input:focus, select:focus, textarea:focus {
   .trust-grid { grid-template-columns: 1fr; }
   .wallet-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .wallet-btn { padding: 16px; font-size: 12px; gap: 8px; }
+  .nft-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .nft-card { padding: 20px 16px; gap: 12px; }
+  .nft-icon { font-size: 36px; }
+  .nft-card h3 { font-size: 16px; }
+  .nft-card p { font-size: 13px; }
   h2 { font-size: 28px; }
   .hero h1 { font-size: 32px; }
   .hero-content { padding: 60px 16px; }
@@ -265,6 +316,11 @@ input:focus, select:focus, textarea:focus {
   h3 { font-size: 16px; }
   .wallet-grid { grid-template-columns: 1fr; }
   .wallet-btn { padding: 14px; }
+  .nft-grid { grid-template-columns: 1fr; gap: 16px; }
+  .nft-card { padding: 18px; }
+  .nft-icon { font-size: 32px; }
+  .nft-card h3 { font-size: 15px; }
+  .nft-card p { font-size: 13px; }
   .card { padding: 16px; }
   .form-field { margin-bottom: 14px; }
   input, select, textarea { padding: 10px 12px; font-size: 14px; }

@@ -182,12 +182,33 @@ if (form) {
 }
 
 const contractHelp = document.getElementById('contractHelp');
-const nftHelp = document.getElementById('nftHelp');
 if (contractHelp) contractHelp.addEventListener('click', () => {
   alert('Smart contract support: share your contract address and issue via the contact form.');
 });
+
+const nftHelp = document.getElementById('nftHelp');
 if (nftHelp) nftHelp.addEventListener('click', () => {
   alert('NFT services: include collection address and metadata symptoms in your message.');
+});
+
+const metadataHelp = document.getElementById('metadataHelp');
+if (metadataHelp) metadataHelp.addEventListener('click', () => {
+  alert('Metadata Repair: Share your contract address and we\'ll help restore images, attributes, and IPFS URIs.');
+});
+
+const royaltyHelp = document.getElementById('royaltyHelp');
+if (royaltyHelp) royaltyHelp.addEventListener('click', () => {
+  alert('Royalty Fixes: We\'ll diagnose why fees aren\'t flowing and restore proper configurations.');
+});
+
+const marketplaceHelp = document.getElementById('marketplaceHelp');
+if (marketplaceHelp) marketplaceHelp.addEventListener('click', () => {
+  alert('Marketplace Sync: Tell us which platform isn\'t showing your NFTs—we\'ll sync the metadata.');
+});
+
+const bridgeHelp = document.getElementById('bridgeHelp');
+if (bridgeHelp) bridgeHelp.addEventListener('click', () => {
+  alert('Cross‑Chain Bridge: We debug wrapped tokens, mismatched contracts, and bridge failures.');
 });
 
 const validateBtn = document.getElementById('validateBtn');
