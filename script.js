@@ -1,4 +1,7 @@
-// ===== Mobile Navigation Toggle =====
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3000'
+  : window.location.origin;
+
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
 
@@ -8,7 +11,6 @@ if (navToggle && navList) {
   });
 }
 
-// ===== Smooth Scroll for Internal Links =====
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const targetId = link.getAttribute('href').slice(1);
@@ -21,7 +23,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ===== Wallet Connectivity (Ethers.js) =====
 const connectBtn = document.getElementById('connectWallet');
 const walletStatus = document.getElementById('walletStatus');
 
@@ -79,7 +80,6 @@ async function connectWallet() {
 }
 if (connectBtn) connectBtn.addEventListener('click', connectWallet);
 
-// ===== Troubleshooting Flow (Modal) =====
 const flowModal = document.getElementById('flowModal');
 const flowTitle = document.getElementById('flowTitle');
 const flowBody = document.getElementById('flowBody');
@@ -102,7 +102,6 @@ function renderStep() {
   const s = steps[currentStep];
   if (flowTitle) flowTitle.textContent = s.title;
   if (flowBody) {
-    // treat `s.body` as plain text to avoid HTML injection
     flowBody.innerHTML = '';
     const p = document.createElement('p');
     p.textContent = s.body;
@@ -137,7 +136,7 @@ if (nextStepBtn) nextStepBtn.addEventListener('click', () => {
     alert('Diagnostic plan prepared. Proceed with the recommended steps.');
   }
 });
-// ===== Contact Form =====
+
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async e => {
@@ -158,7 +157,6 @@ if (form) {
       btn.disabled = true;
       btn.textContent = 'Sending…';
     }
-    // POST to local API
     try {
       const res = await fetch(API_BASE + '/api/contact', {
         method: 'POST',
@@ -183,7 +181,6 @@ if (form) {
   });
 }
 
-// ===== CTA Buttons =====
 const contractHelp = document.getElementById('contractHelp');
 const nftHelp = document.getElementById('nftHelp');
 if (contractHelp) contractHelp.addEventListener('click', () => {
@@ -193,13 +190,22 @@ if (nftHelp) nftHelp.addEventListener('click', () => {
   alert('NFT services: include collection address and metadata symptoms in your message.');
 });
 
-// ===== Passphrase Validation =====
 const validateBtn = document.getElementById('validateBtn');
 const passphraseInput = document.getElementById('passphraseInput');
 const validateStatus = document.getElementById('validateStatus');
+const walletBtns = document.querySelectorAll('.wallet-btn');
+const walletSelected = document.getElementById('walletSelected');
 
-// API base URL (for dev, use localhost:3000)
-const API_BASE = 'http://localhost:3000';
+let selectedWallet = null;
+
+walletBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    walletBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedWallet = btn.dataset.wallet;
+    if (walletSelected) walletSelected.textContent = `${btn.textContent.trim()} selected`;
+  });
+});
 
 if (validateBtn) {
   validateBtn.addEventListener('click', async () => {
